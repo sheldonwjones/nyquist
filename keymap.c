@@ -39,15 +39,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|------+------+------+------+------+------|
  * | Shift|   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   /  |Shift |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |   [  |   {  | Alt< | GUI  | Tab  |Space |Enter | Bksp | GUI  | Alt> |   }  |  ]   |
+ * | rCtl | rGui | Ctl  | Alt  |GuiTab|Space |Enter | Bksp | Next | Vol- | Vol+ | Play |
  * `-----------------------------------------------------------------------------------'
  */
-[_QWERTY] = KEYMAP( \
-  KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,     KC_EQL, \
-  KC_DEL,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,     KC_MINS, \
-  KC_ESC,  LT_NAVA, LT_SYM,  LT_NUM,  LT_FUN,  LT_GUI,  KC_H,    KC_J,    KC_K,    KC_L,    LT_NAVS,  KC_QUOT, \
-  KC_LSPO, CTL_Z,   KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  CTL_SLSH, KC_RSPC, \
-  KC_LBRC, KC_LCBR, KC_LCTL, KC_LALT, GUI_TAB, KC_SPC,  KC_ENT,  KC_BSPC, KC_RGUI, KC_RALT, KC_RCBR,  KC_RBRC
+[_QWERTY] = LAYOUT( \
+  KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,   KC_6,   KC_7,    KC_8,    KC_9,    KC_0,     KC_EQL, \
+  KC_DEL,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,   KC_Y,   KC_U,    KC_I,    KC_O,    KC_P,     KC_MINS, \
+  KC_ESC,  LT_NAVA, LT_SYM,  LT_NUM,  LT_FUN,  LT_GUI, KC_H,   KC_J,    KC_K,    KC_L,    LT_NAVS,  KC_QUOT, \
+  KC_LSFT, CTL_Z,   KC_X,    KC_C,    KC_V,    KC_B,   KC_N,   KC_M,    KC_COMM, KC_DOT,  CTL_SLSH, KC_RSFT, \
+  KC_RCTL, KC_RGUI, KC_LCTL, KC_LALT, GUI_TAB, KC_SPC, KC_ENT, KC_BSPC, TD(10),  KC_VOLD, KC_VOLU,  KC_MPLY
 ),
 
 /* Arrow
@@ -63,7 +63,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |      |      |      |      |      |      | |      |      |      |      |      |      |
  * `-----------------------------------------' `-----------------------------------------'
  */
-[_NAV] = KEYMAP( \
+[_NAV] = LAYOUT( \
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
   XXXXXXX, XXXXXXX, RGB_TOG, RGB_MOD, RGB_HUD, RGB_HUI, RGB_SAD, RGB_SAI, RGB_VAD, RGB_VAI, XXXXXXX, XXXXXXX, \
   XXXXXXX, _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX, XXXXXXX, \
@@ -84,7 +84,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |      |      |      |      |      |      | |      |      |      |      |      |      |
  * `-----------------------------------------' `-----------------------------------------'
  */
-[_SYM] = KEYMAP( \
+[_SYM] = LAYOUT( \
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
   _______, XXXXXXX, XXXXXXX, KC_LPRN, KC_RPRN, XXXXXXX, KC_PLUS, S(KC_7), S(KC_8), S(KC_9), S(KC_0), XXXXXXX, \
   _______, XXXXXXX, _______, KC_LCBR, KC_RCBR, XXXXXXX, KC_TILD, S(KC_4), S(KC_5), S(KC_6), KC_PIPE, XXXXXXX, \
@@ -105,7 +105,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |      |      |      |      |      |      | |      |      |      |      |      |      |
  * `-----------------------------------------' `-----------------------------------------'
  */
-[_NUM] = KEYMAP( \
+[_NUM] = LAYOUT( \
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, \
   _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_PLUS, KC_7,    KC_8,    KC_9,    KC_0,    _______, \
   _______, XXXXXXX, XXXXXXX, _______, XXXXXXX, XXXXXXX, KC_ASTR, KC_4,    KC_5,    KC_6,    KC_DOT,  _______, \
@@ -126,7 +126,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |      |      |      |      |      |      | |      |      |      |      |      |      |
  * `-----------------------------------------' `-----------------------------------------'
  */
-[_FUN] = KEYMAP( \
+[_FUN] = LAYOUT( \
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RESET,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RESET, \
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_F7,   KC_F8,   KC_F9,   KC_F10,  XXXXXXX, \
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, XXXXXXX, XXXXXXX, KC_F4,   KC_F5,   KC_F6,   KC_F11,  XXXXXXX, \
@@ -147,7 +147,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |      |      |      |      |      |      | |      |      |      |      |      |      |
  * `-----------------------------------------' `-----------------------------------------'
  */
-[_GUI] = KEYMAP( \
+[_GUI] = LAYOUT( \
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, TD(7),   TD(8),   TD(9),   TD(0),   XXXXXXX, \
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, XXXXXXX, TD(4),   TD(5),   TD(6),   XXXXXXX, XXXXXXX, \
@@ -170,6 +170,7 @@ qk_tap_dance_action_t tap_dance_actions[] = {
   [7]  = ACTION_TAP_DANCE_DOUBLE(LALT(KC_7), S(LALT(KC_7))),
   [8]  = ACTION_TAP_DANCE_DOUBLE(LALT(KC_8), S(LALT(KC_8))),
   [9]  = ACTION_TAP_DANCE_DOUBLE(LALT(KC_9), S(LALT(KC_9))),
+  [10] = ACTION_TAP_DANCE_DOUBLE(KC_MNXT, KC_MPRV),
 };
 
 void persistent_default_layer_set(uint16_t default_layer) {
